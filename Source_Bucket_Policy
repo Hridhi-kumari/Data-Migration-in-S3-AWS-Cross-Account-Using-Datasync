@@ -5,8 +5,8 @@
    "Effect": "Allow",
    "Principal": {
     "AWS": [
-     "arn:aws:iam::DIST_ACCOUNT_ID:role/ROLE_NAME",                           #REPLACE WITH YOUR ROLE ARN
-     "arn:aws:iam::DIST_ACCOUNT_ID:user/DESTINATION_ACCOUNT_IAM_USER_NAME"    #REPLACE WITH YOUR IAM USER ARN 
+     "arn:aws:iam::<DESTINATIONT_ACCOUNT_ID>:role/<ROLE_NAME>",                           #REPLACE WITH YOUR DESTINATION ACCOUNT IAM ROLE ARN
+     "arn:aws:iam::<DESTINITION_ACCOUNT_ID>:user/<DESTINATION_ACCOUNT_IAM_USER_NAME>"     #REPLACE WITH YOUR IAM USER ARN 
     ]
    },
    "Action": [
@@ -14,14 +14,14 @@
     "s3:ListBucket",
     "s3:ListBucketMultipartUploads"
    ],
-   "Resource": "arn:aws:s3:::resource_bucket"        #REPLACE WITH YOUR BUCKET ARN
+   "Resource": "arn:aws:s3:::source_bucket"        #REPLACE WITH YOUR SOURCE BUCKET ARN
   },
   {
    "Effect": "Allow",
    "Principal": {
     "AWS": [
-     "arn:aws:iam::DIST_ACCOUNT_ID:role/ROLE_NAME",                                 #REPLACE WITH YOUR ROLE ARN
-     "arn:aws:iam::DIST_ACCOUNT_ID:user/DESTINATION_ACCOUNT_IAM_USER_NAME"          #REPLACE WITH YOUR IAM USER ARN  
+     "arn:aws:iam::<DESTINITION_ACCOUNT_ID>:role/<ROLE_NAME>",                                 #REPLACE WITH YOUR DESTINATION ACCOUNT IAM ROLE ARN
+     "arn:aws:iam::<DESTINITION_ACCOUNT_ID>:user/<DESTINATION_ACCOUNT_IAM_USER_NAME>"          #REPLACE WITH YOUR IAM USER ARN  
     ]
    },
    "Action": [
@@ -33,7 +33,7 @@
     "s3:GetObjectTagging",
     "s3:PutObject"
    ],
-   "Resource": "arn:aws:s3:::source_bucket/*"        #REPLACE WITH YOUR BUCKET ARN
+   "Resource": "arn:aws:s3:::source_bucket/*"        #REPLACE WITH YOUR SOURCE BUCKET ARN
   }
  ]
 }
