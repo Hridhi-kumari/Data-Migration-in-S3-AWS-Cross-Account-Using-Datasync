@@ -9,13 +9,13 @@ This guide outlines a detailed, step-by-step approach for transferring data betw
 
 **Prerequisites**
 
-* Two separate AWS accounts are involved: one as the **Source** and the other as the **Destination**.
+* Two separate AWS accounts are involved: one as the **source** and the other as the **Destination**.
 * The **source S3 bucket** resides in **Account A**.
 * The **destination S3 bucket** is located in **Account B**.
 * The **AWS DataSync service** must be enabled in **both accounts**.
 * Appropriate **IAM permissions** are required in each account to allow the creation of **roles and policies** necessary for DataSync to function.
 
-### 1. Create IAM Role in Source Account (Account A)
+### 1. Create IAM Role in Destination Account ( Account B) 
 
 #### a. Open IAM Console:
 
@@ -43,7 +43,7 @@ This guide outlines a detailed, step-by-step approach for transferring data betw
 
 #### d. Save the role ARN for later use.
 
-### Create Bucket and add Bucket Policy in Source Account
+### Create Bucket and add Bucket Policy in Source Account (Account A)
 - Open the S3 console in Account A.
 - Navigate to Create Source Bucket. (give globally unique name).
 - Add Bucket policy to the source bucket.
