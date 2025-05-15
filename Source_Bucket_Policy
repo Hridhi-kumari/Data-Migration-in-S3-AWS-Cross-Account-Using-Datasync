@@ -1,0 +1,39 @@
+{
+ "Version": "2012-10-17",
+ "Statement": [
+  {
+   "Effect": "Allow",
+   "Principal": {
+    "AWS": [
+     "arn:aws:iam::DIST_ACCOUNT_ID:role/ROLE_NAME",                           #REPLACE WITH YOUR ROLE ARN
+     "arn:aws:iam::DIST_ACCOUNT_ID:user/DESTINATION_ACCOUNT_IAM_USER_NAME"    #REPLACE WITH YOUR IAM USER ARN 
+    ]
+   },
+   "Action": [
+    "s3:GetBucketLocation",
+    "s3:ListBucket",
+    "s3:ListBucketMultipartUploads"
+   ],
+   "Resource": "arn:aws:s3:::resource_bucket"        #REPLACE WITH YOUR BUCKET ARN
+  },
+  {
+   "Effect": "Allow",
+   "Principal": {
+    "AWS": [
+     "arn:aws:iam::DIST_ACCOUNT_ID:role/ROLE_NAME",                                 #REPLACE WITH YOUR ROLE ARN
+     "arn:aws:iam::DIST_ACCOUNT_ID:user/DESTINATION_ACCOUNT_IAM_USER_NAME"          #REPLACE WITH YOUR IAM USER ARN  
+    ]
+   },
+   "Action": [
+    "s3:AbortMultipartUpload",
+    "s3:DeleteObject",
+    "s3:GetObject",
+    "s3:ListMultipartUploadParts",
+    "s3:PutObjectTagging",
+    "s3:GetObjectTagging",
+    "s3:PutObject"
+   ],
+   "Resource": "arn:aws:s3:::source_bucket/*"        #REPLACE WITH YOUR BUCKET ARN
+  }
+ ]
+}
